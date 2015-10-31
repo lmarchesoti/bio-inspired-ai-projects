@@ -1,0 +1,5 @@
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Commons\bin\Debug\Commons.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Commons\bin\Debug\Commons.pdb
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Commons\obj\Debug\ResolveAssemblyReference.cache
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Commons\obj\Debug\Commons.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Commons\obj\Debug\Commons.pdb

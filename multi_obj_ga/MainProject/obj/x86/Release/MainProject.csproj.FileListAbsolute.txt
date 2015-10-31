@@ -1,0 +1,14 @@
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\MainProject.exe
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\MainProject.pdb
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\Genetic Algorithm Commons.dll
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\Mono-Objective Genetic Algorithm.dll
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\Multi-Objective Genetic Algorithm.dll
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\Visual Solutions Plotter.exe
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\DataPlotter.dll
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\Genetic Algorithm Commons.pdb
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\Mono-Objective Genetic Algorithm.pdb
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\Multi-Objective Genetic Algorithm.pdb
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\bin\Release\Visual Solutions Plotter.pdb
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\obj\x86\Release\MainProject.exe
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\MainProject\obj\x86\Release\MainProject.pdb

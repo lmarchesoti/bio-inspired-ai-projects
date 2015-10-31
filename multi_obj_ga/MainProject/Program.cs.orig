@@ -1,0 +1,39 @@
+﻿using System;
+using Genetic_Algorithm_Commons;
+using Genetic_Algorithm_Commons.Problems;
+using Genetic_Algorithm_Commons.Problems.InstanceDescriptions;
+using Mono_Objective_Genetic_Algorithm;
+using Mono_Objective_Genetic_Algorithm.Crossover_Methods;
+using Mono_Objective_Genetic_Algorithm.Reinsertion_Methods;
+using Mono_Objective_Genetic_Algorithm.Selection_Methods;
+
+namespace MainProject {
+    class Program {
+        static void Main(string[] args) {
+            ProblemBase mainProblem;
+            //mainProblem = new CryptArithmeticProblem(CryptArithmeticInstanceDescription.CocaColaOasis);
+            //mainProblem = new CryptArithmeticProblem(CryptArithmeticInstanceDescription.SendMoreMoney);
+
+            //mainProblem = new TaskSchedulingProblem(TaskSchedulingInstanceDescription.ClassExample(2));
+            mainProblem = new TaskSchedulingProblem(TaskSchedulingInstanceDescription.Gauss18(2));
+
+            MonoObjectiveGeneticAlgorithm AG = new MonoObjectiveGeneticAlgorithm(
+                mainProblem,
+                new Tour(1),
+                new PMX(),
+                new Elitist(30),
+                200,
+                200,
+                15);
+
+            string convergenceReport = string.Empty;
+            IndividualBase i = AG.Execute(1, out convergenceReport);
+            //IndividualBase i = AG.Execute();
+            //double avgMiliSecMetodo = Benchmark.This(() => AG.Execute(2)).Take(3).Average();
+            //Console.WriteLine("Tempo do Metodo 1: " + avgMiliSecMetodo.ToString() + " milisegundos.");
+            Console.Write(mainProblem.IndividualToString(i));
+            Console.Write(convergenceReport);
+            Console.ReadKey();
+        }
+    }
+}

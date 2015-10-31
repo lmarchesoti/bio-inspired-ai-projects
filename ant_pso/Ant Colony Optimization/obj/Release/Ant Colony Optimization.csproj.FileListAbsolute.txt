@@ -1,0 +1,7 @@
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Ant Colony Optimization\bin\Release\Ant Colony Optimization.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Ant Colony Optimization\bin\Release\Ant Colony Optimization.pdb
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Ant Colony Optimization\bin\Release\Commons.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Ant Colony Optimization\bin\Release\Commons.pdb
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Ant Colony Optimization\obj\Release\ResolveAssemblyReference.cache
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Ant Colony Optimization\obj\Release\Ant Colony Optimization.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Ant Colony Optimization\obj\Release\Ant Colony Optimization.pdb

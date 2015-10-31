@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA1E7653-A560-47FE-90B1-C2B3FF21CB49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mono_Objective_Genetic_Algorithm</RootNamespace>
+    <AssemblyName>Mono-Objective Genetic Algorithm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crossover Methods\Ciclic.cs" />
+    <Compile Include="Crossover Methods\PMX.cs" />
+    <Compile Include="CrossoverMethodBase.cs" />
+    <Compile Include="IndividualEvaluator.cs" />
+    <Compile Include="SelectionMethodBase.cs" />
+    <Compile Include="MonoObjectiveGeneticAlgorithm.cs" />
+    <Compile Include="Population_MonoObjective AG.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reinsertion Methods\BestAmongstAll.cs" />
+    <Compile Include="Reinsertion Methods\Elitist.cs" />
+    <Compile Include="Reinsertion Methods\FitnessBased.cs" />
+    <Compile Include="Reinsertion Methods\Pure.cs" />
+    <Compile Include="ReinsertionMethodBase.cs" />
+    <Compile Include="Selection Methods\EstocasticTour.cs" />
+    <Compile Include="Selection Methods\Roulette.cs" />
+    <Compile Include="Selection Methods\Tour.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Genetic Algorithm Commons\Genetic Algorithm Commons.csproj">
+      <Project>{682C405B-5820-4F9E-8281-BFC88BCAAB1F}</Project>
+      <Name>Genetic Algorithm Commons</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

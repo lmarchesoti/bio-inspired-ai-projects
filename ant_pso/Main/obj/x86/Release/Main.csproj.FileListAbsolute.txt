@@ -1,0 +1,11 @@
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\bin\Release\Main.exe
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\bin\Release\Main.pdb
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\bin\Release\Ant Colony Optimization.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\bin\Release\Commons.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\bin\Release\Particle Swarm Optimization.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\bin\Release\Ant Colony Optimization.pdb
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\bin\Release\Commons.pdb
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\bin\Release\Particle Swarm Optimization.pdb
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\obj\x86\Release\Main.exe
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Main\obj\x86\Release\Main.pdb

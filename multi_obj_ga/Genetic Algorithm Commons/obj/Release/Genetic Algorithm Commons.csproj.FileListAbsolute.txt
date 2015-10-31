@@ -1,0 +1,5 @@
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Genetic Algorithm Commons\bin\Release\Genetic Algorithm Commons.dll
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Genetic Algorithm Commons\bin\Release\Genetic Algorithm Commons.pdb
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Genetic Algorithm Commons\obj\Release\ResolveAssemblyReference.cache
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Genetic Algorithm Commons\obj\Release\Genetic Algorithm Commons.dll
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Genetic Algorithm Commons\obj\Release\Genetic Algorithm Commons.pdb

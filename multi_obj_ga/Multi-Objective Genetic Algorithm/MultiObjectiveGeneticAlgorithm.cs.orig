@@ -1,0 +1,178 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Genetic_Algorithm_Commons;
+using Multi_Objective_Genetic_Algorithm.Crossover_Methods;
+using Multi_Objective_Genetic_Algorithm.Reinsertion_Methods;
+using Multi_Objective_Genetic_Algorithm.Selection_Methods;
+//eu fiz esses includes e criei as classes no pacote, mas eu não tenho idéia se era soh isso e pq ta dando erro
+//pai da coisa, conserta isso pf
+
+namespace Multi_Objective_Genetic_Algorithm {
+    public class MultiObjectiveGeneticAlgorithm {
+        Population_MultiObjective_AG population;
+        Population_MultiObjective_AG offspring;
+        ProblemBase problem;
+        int populationSize;
+        int offspringPopSize;
+        int numberOfGenerations;
+        int mutationPct;
+
+        SelectionMethodBase selectionMethod;
+        CrossoverMethodBase crossoverMethod;
+        ReinsertionMethodBase reinsertionMethod;
+
+        /// <summary>
+        /// Represents an Entity able to execute the Genetic Algorithm for the input parameters
+        /// </summary>
+        /// <param name="problem">Instance of a Problem to be Solved</param>
+        /// <param name="selectionMethodType">The Method to Be used for Parent Selection in Crossover Methods</param>
+        /// <param name="tourSize">In case the 'Tour' Method is chosen as the current Selection Method, this parameter will be considered in its evaluation</param>
+        /// <param name="crossoverMethodType">The Method to be used for Crossover between two parents</param>
+        /// <param name="reinsertionMethodType">The Method by which Individuals are chosen to be part of the next Generation</param>
+        /// <param name="populationSize">The Individual Count in a Population that is considered to be a Generation</param>
+        /// <param name="numberOfGenerations">The Number of Generations to run before the algorithm returns an Result</param>
+        /// <param name="crossoverPct">The Crossover percentage involved in the calculation</param>
+        /// <param name="mutationPct">The Mutation percentage involved in the calculation</param>
+        public MultiObjectiveGeneticAlgorithm(ProblemBase problem, 
+            //SelectionMethodBase selectionMethod, 
+            //CrossoverMethodBase crossoverMethod, 
+            //ReinsertionMethodBase reinsertionMethod, 
+            int populationSize, int offspringPopSize, int numberOfGenerations, int mutationPct) {
+
+            this.populationSize = populationSize;
+            this.problem = problem;
+            this.numberOfGenerations = numberOfGenerations;
+            this.mutationPct = mutationPct;
+            this.offspringPopSize = offspringPopSize;
+            //this.selectionMethod = selectionMethod;
+            //selectionMethod.Problem = problem;
+            //this.crossoverMethod = crossoverMethod;
+            //crossoverMethod.Problem = problem;
+            //this.reinsertionMethod = reinsertionMethod;
+        }
+
+        public IEnumerable<IndividualBase> Execute() {
+            // Clears the Individual Population
+            population = new Population_MultiObjective_AG(problem, populationSize);
+            offspring = new Population_MultiObjective_AG(problem, offspringPopSize);
+
+            // Generate Initial Population
+            for (int idx = 0; idx < populationSize; ++idx) {
+                population.AddIndividual(problem.CreateRandomSolution());
+            }
+
+            // Make the Population become the Current Generation
+            Population_MultiObjective_AG currentGeneration = population;
+            Population_MultiObjective_AG newGeneration = null;
+
+            for (int idxGeracao = 0; idxGeracao < numberOfGenerations; ++idxGeracao) {
+                newGeneration = RunGeneration(currentGeneration, selectionMethod, crossoverMethod, reinsertionMethod);
+                //newGeneration.BestFirstSort();
+                currentGeneration = newGeneration;
+            }
+
+            return null;//currentGeneration.GetBestIndividual();
+        }
+
+        //LEMBRANDO QUE ISSO TUDO EH PRO NSGA-2
+        //PAI DA COISA, ARRUMA O PROGRAMA PRA COMPORTAR OS DOIS METODOS
+        private Population_MultiObjective_AG RunGeneration(Population_MultiObjective_AG currentGeneration, SelectionMethodBase selectionMethod, CrossoverMethodBase crossoverMethod, /*IReinsertionMethod reinsertionMethod, */ReinsertionMethodBase reinsertionMethod)
+        {
+            Population_MultiObjective_AG rt = new Population_MultiObjective_AG(problem, populationSize + offspringPopSize);
+            rt.AddPopulation(population);
+            rt.AddPopulation(offspring);
+            List<Population_MultiObjective_AG> fronts = fastNonDominatedSort(rt);
+            Population_MultiObjective_AG front = new Population_MultiObjective_AG(problem, 0);
+            //vv se isso funcionar talvez nao precisa implementar o fastNonDominatedSort
+            //Population_MultiObjective_AG front = problem.FindNonDominatedFront(population);
+
+            population = new Population_MultiObjective_AG(problem, populationSize);
+            for (int i = 0; population.content.Count + front.content.Count < populationSize; ++i)
+            {
+                //é pra condição olhar o tanto de elementos que ja foram inseridos na população + o front atual
+                //se ela não tiver funcionando direito o pai da coisa arruma, pq eu ainda nao sei como diabos essa coisa foi implementada e o que é que ta no content
+                front = fronts.ElementAt(i);
+                //TODO
+                //implementar o crowdingDistanceAssignment
+                front = crowdingDistanceAssignment(front);
+                population.AddPopulation(front);
+            }
+
+            //TODO
+            //definir comparação do individuo de acordo com o Crowded-Comparison Operator
+            //ou alterar o sort pra ordenar com outra função, sei lá..
+            population.sort();
+
+            //pega soh o numero de individuos que deve caber na população
+            front.TrimTo(populationSize - population.content.Count);
+            //e adiciona à população
+            population.AddPopulation(front);
+
+            //o fluxo acima foi implementado de acordo com o artigo, mas da pra otimizar algumas coisas usando as estruturas que estão sendo usadas..
+            //"We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil" - Pato Donald Knuth
+
+            /*
+             * cria nova população offspring
+             * TODO
+             * pai da coisa, avaliar possíveis erros
+             */
+            
+            Population_MultiObjective_AG newGeneration = new Population_MultiObjective_AG(problem, offspringPopSize);
+
+            int expectedChildCount = ((populationSize * reinsertionMethod.OffspringPercentage) / 100);
+
+            while (offspring.IndividualCount < expectedChildCount)
+            {
+                IndividualBase parent1 = null, parent2 = null, child1 = null, child2 = null;
+                selectionMethod.Execute(population, out parent1, out parent2);
+                crossoverMethod.Execute(parent1, parent2, out child1, out child2);
+                offspring.AddIndividual(child1);
+                offspring.AddIndividual(child2);
+            }
+
+            int mutatedChildCount = ((offspring.IndividualCount * mutationPct) / 100);
+            for (int idx = 0; idx < mutatedChildCount; ++idx)
+            {
+                IndividualBase randomIndividual = offspring.GetRandomIndividual();
+                problem.MutateIndividual(randomIndividual);
+            }
+
+            //não precisa desse return, as operações são feitas direto na população
+            //pai da coisa, arruma esse fluxo pf
+            return newGeneration;
+        }
+
+        private List<Population_MultiObjective_AG> fastNonDominatedSort(Population_MultiObjective_AG population){
+            //TODO
+            //implementar de acordo com o artigo
+            List<Population_MultiObjective_AG> fronts = null;
+            return fronts;
+        }
+
+        private Population_MultiObjective_AG crowdingDistanceAssignment(Population_MultiObjective_AG front)
+        {
+            int l = front.content.Count;
+            for (int i = 0; i < l; ++i)
+                //front.content.ElementAt(i).distance = 0;
+                //vei na boa, onde tao os atributos do individuo?
+                continue;
+            //isso era pra ser um for pra cada objetivo..
+            //como a gente sabe o numero de objetivos, da pra separar aqui em 2 fors, um pra tempo e outro pra potencia
+            for (Objective m : front.content.ElementAt(0).Problem.MultiObjectiveGoal)
+            {
+                front.sort(m);
+                //atribui distancia mais de 8 mil para primeiro e ultimo elementos
+                //front.content.First.distance
+                //front.content.Last.distance
+                for(int i = 2; i < l - 1; ++i)
+                    front.content.ElementAt(i).distance += (front.content.ElementAt(i+1).m - front.content.ElementAt(i-1).m)/(max(m) - min(m));
+                    //m é o valor do objetivo em questão, por isso eu acho que vai ser mais facil separar em dois loops
+                    //tem que criar dois campos pra guardar os valores max e min também, pra não ordenar essa coisa toda hora..
+            }
+            return front;
+        }
+
+    }
+}

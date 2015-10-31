@@ -1,0 +1,7 @@
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Mono-Objective Genetic Algorithm\bin\Release\Mono-Objective Genetic Algorithm.dll
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Mono-Objective Genetic Algorithm\bin\Release\Mono-Objective Genetic Algorithm.pdb
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Mono-Objective Genetic Algorithm\bin\Release\Genetic Algorithm Commons.dll
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Mono-Objective Genetic Algorithm\bin\Release\Genetic Algorithm Commons.pdb
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Mono-Objective Genetic Algorithm\obj\Release\ResolveAssemblyReference.cache
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Mono-Objective Genetic Algorithm\obj\Release\Mono-Objective Genetic Algorithm.dll
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Mono-Objective Genetic Algorithm\obj\Release\Mono-Objective Genetic Algorithm.pdb

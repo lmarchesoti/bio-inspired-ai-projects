@@ -1,0 +1,10 @@
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Visual Solutions Plotter\bin\Debug\Visual Solutions Plotter.exe
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Visual Solutions Plotter\bin\Debug\Visual Solutions Plotter.pdb
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Visual Solutions Plotter\bin\Debug\DataPlotter.dll
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Visual Solutions Plotter\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Visual Solutions Plotter\obj\x86\Debug\Visual_Solutions_Plotter.MainForm.resources
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Visual Solutions Plotter\obj\x86\Debug\Visual_Solutions_Plotter.Properties.Resources.resources
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Visual Solutions Plotter\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Visual Solutions Plotter\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Visual Solutions Plotter\obj\x86\Debug\Visual Solutions Plotter.exe
+D:\Documents\Workspace\ag-multiobj\Codigo-Fonte\Visual Solutions Plotter\obj\x86\Debug\Visual Solutions Plotter.pdb

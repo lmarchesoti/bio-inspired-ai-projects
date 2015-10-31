@@ -1,0 +1,7 @@
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Particle Swarm Optimization\bin\Release\Particle Swarm Optimization.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Particle Swarm Optimization\bin\Release\Particle Swarm Optimization.pdb
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Particle Swarm Optimization\bin\Release\Commons.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Particle Swarm Optimization\bin\Release\Commons.pdb
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Particle Swarm Optimization\obj\Release\ResolveAssemblyReference.cache
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Particle Swarm Optimization\obj\Release\Particle Swarm Optimization.dll
+D:\Documents\Workspace\ant-pso\Codigo-Fonte\Particle Swarm Optimization\obj\Release\Particle Swarm Optimization.pdb
