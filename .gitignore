@@ -1,2 +1,4 @@
-*.swp
-*~
+*/*.swp
+*/*~
+task_scheduling_genetic_algorithm/output/*.o
+task_scheduling_genetic_algorithm/prog
